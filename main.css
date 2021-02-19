@@ -1,0 +1,359 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fefefe;
+}
+
+html,body{
+    font-family: "Nunito Sans", sans-serif;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .container{
+    width: 96%;
+    margin: 0px auto;
+}
+
+.divider{
+    width: 100%;
+    height: 80px;
+}
+
+.line{
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
+header{
+    margin:  80px 0;
+    z-index: 5;
+}
+
+header .site-caption h1{
+    font-family: "Juana Regular";
+    font-size: 12rem;
+}
+
+@media(max-width: 900px){
+    header{
+        margin: 140px 0 80px 0;
+    }
+    header .site-caption h1{
+        font-size: 5.4rem;
+        margin: 0 40px;
+    }
+}
+
+.hero-image{
+    width:100%;
+    margin-top: -300px;
+}
+
+.hero-image::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.hero-image .image-container{
+    width: 40%;
+    float: right;
+}
+
+.hero-image .image-container img{
+    width: 100%;
+    filter: sepia(60%);
+}
+
+@media(max-width:900px){
+    .hero-image{
+        margin-top: 40px;
+    }
+    .hero-image .image-container{
+        width: 100%;
+    }
+}
+
+/* Projects */
+
+.project-item{
+    position: relative;
+    padding: 1.6vh 0 0 0;
+    margin: 4px;
+}
+
+.project-item-link{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    transition: opacity 0.4s;
+}
+
+.project-item-link::before{
+    all: initial;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 60%;
+    left: 0;
+    pointer-events: none;
+}
+
+.project-item-link:hover{
+    transition-duration: 0.1s;
+    opacity: 0;
+}
+
+.project-item-image{
+    pointer-events: none;
+    position: absolute;
+    height: 50vh;
+    max-width: 500px;
+    left: 100%;
+    top:50%;
+    object-fit: cover;
+    visibility: hidden;
+    transform: translate3d(calc(-100% - 6vw), -30%, 0) translate3d(0,20px,0);
+}
+
+.project-item-link:hover + .project-item-image{
+    visibility: visible;
+    transform: translate3d(calc(-100% - 6vw), -30%,0) rotate3d(0,0,1,4deg);
+    transition: all 0.4s;
+}
+
+@media(max-width:900px){
+    .project-item-image{
+        display: none;
+    }
+}
+
+.project{
+    margin-top: 80px;
+    --offset: 20vw;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+}
+
+.marquee{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #fff;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+
+
+.marquee-inner{
+    width: fit-content;
+    display: flex;
+    position: relative;
+    opacity: 0;
+    padding: 2vw 0;
+    animation: marquee 5s linear infinite;
+    animation-play-state: paused;
+    transition: opacity 0.1s;
+}
+
+.project-item-link:hover ~ .marquee .marquee-inner{
+    animation-play-state: running;
+    opacity: 1;
+    transition-duration: 0.4s;
+}
+
+.project-item-link, 
+.marquee-inner span{
+    font-family: "Juana Regular";
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 8vw;
+    padding: 1.6vw 1vw;
+    font-weight: 900;
+}
+
+@keyframes marquee{
+    0%{
+        transform: translateX(var(--move-initial));
+    }
+    100%{
+        transform: translateX(var(--move-final));
+    }
+}
+
+
+/* about */
+
+.about-container{
+    width: 80%;
+    height: 100%;
+    margin: 100px 0 80px 100px;
+    padding: 40px;
+}
+
+.about-container p{
+    margin: 60px 0;
+    font-size: 2.8rem;
+}
+
+.about-container p span{
+    font-family: "Juana Regular";
+}
+
+.about-container a{
+    font-size: 1.7rem;
+}
+
+@media(max-width: 900px){
+    .about-container{
+        margin: 140px 0 140px 40px;
+        padding: 0;
+    }
+
+    .about-container p{
+        font-size: 1.7rem;
+    }
+
+    .about-container a{
+        font-size: 1.35rem;
+    }
+}
+
+
+/* splash */
+
+.splash-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    user-select: none;
+    pointer-events: none;
+    animation: slide-out 2s cubic-bezier(0.97,0.01,0.36,0.99) 3s;
+    animation-fill-mode: forwards;
+}
+
+.splash-text-wrapper{
+    position: absolute;
+    overflow: hidden;
+}
+
+.splashText{
+    font-family: "Juana Regular";
+    font-size: 8rem;
+}
+
+@media(max-width:900px){
+    .splashText{
+        font-size: 3rem;
+    }
+}
+
+.splashText-1,
+.splashText-3,
+.splashText-4,
+.splashText-8,
+.splashText-9,
+.splashText-11{
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 1px #fff;
+}
+
+@keyframes blink {
+    0% {
+      opacity: 0%;
+    }
+    1% {
+      opacity: 100%;
+    }
+    99% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+ .splashText-1{
+     animation: blink 0.8s linear 0.9s, blink 0.8s linear 2s;
+     opacity: 0;
+ } 
+
+ .splashText-2{
+    animation: blink 0.8s linear 0.8s, blink 0.8s linear 2.1s;
+    opacity: 0;
+} 
+
+.splashText-3{
+    animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
+    opacity: 0;
+} 
+
+.splashText-4 {
+    animation: blink 0.8s linear 0.6s, blink 0.8s linear 2.3s;
+    opacity: 0;
+  }
+  
+  .splashText-5 {
+    animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
+    opacity: 0;
+  }
+  
+  .splashText-6 {
+    animation: blink 0.8s linear 0.4s, blink 0.8s linear 2.5s,
+      slide-out 1s linear 3.2s;
+    opacity: 0;
+  }
+  
+  .splashText-7 {
+    animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
+    opacity: 0;
+  }
+  
+  .splashText-8 {
+    animation: blink 0.8s linear 0.6s, blink 0.8s linear 2.3s;
+    opacity: 0;
+  }
+  
+  .splashText-9 {
+    animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
+    opacity: 0;
+  }
+  
+  .splashText-10 {
+    animation: blink 0.8s linear 0.8s, blink 0.8s linear 2.1s;
+    opacity: 0;
+  }
+  
+  .splashText-11 {
+    animation: blink 0.8s linear 0.9s, blink 0.8s linear 2s;
+    opacity: 0;
+  }
+
+  @keyframes slide-out{
+      0%{
+          height: 100%;
+      }
+      40%{
+          height: 100%;
+      }
+      100%{
+          height: 0%;
+          display: none;
+      }
+  }

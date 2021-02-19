@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.0/dist/locomotive-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.0/dist/locomotive-scroll.min.js"></script>
+</head>
+<body id="para-scroll">
+    <div class="wrapper">
+
+        <div class="splash-container">
+            <div class="splash-text-wrapper">
+                <div class="splashText-1 splashText">stop the boring</div>
+                <div class="splashText-2 splashText">stop the boring</div>
+                <div class="splashText-3 splashText">stop the boring</div>
+                <div class="splashText-4 splashText">stop the boring</div>
+                <div class="splashText-5 splashText">stop the boring</div>
+                <div class="splashText-6 splashText">stop the boring</div>
+                <div class="splashText-7 splashText">stop the boring</div>
+                <div class="splashText-8 splashText">stop the boring</div>
+                <div class="splashText-9 splashText">stop the boring</div>
+                <div class="splashText-10 splashText">stop the boring</div>
+                <div class="splashText-11 splashText">stop the boring</div>
+            </div>
+        </div>
+
+        <div class="container" data-scroll-container>
+            <main>
+                <header data-scroll-section>
+                    <div class="site-caption">
+                        <h1 data-scroll>Break The <br>Boring <br>&nbsp;Trend</h1>
+                    </div>
+                </header>
+                <div class="hero-image" data-scroll-section>
+                    <div class="image-container">
+                        <img src="assets/hero.webp" alt="hero image" data-scroll data-scroll-speed="5">
+                    </div>
+                </div>
+                <div class="divider"></div>
+
+                <section class="project">
+                    <div class="project-container" data-scroll-section>
+                        <div>
+                            <div class="project-item">
+                                <a href="#" class="project-item-link">&gt; STILE</a>
+                                <img src="assets/pro-image1.webp" class="project-item-image">
+                                <div class="marquee">
+                                    <div class="marquee-inner">
+                                        <span>STILE</span>
+                                        <span>STILE</span>
+                                        <span>STILE</span>
+                                        <span>STILE</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="project-item">
+                                <a href="#" class="project-item-link">&gt; BrudStudio</a>
+                                <img src="assets/pro-image2.webp" class="project-item-image">
+                                <div class="marquee">
+                                    <div class="marquee-inner">
+                                        <span>BrudStudio</span>
+                                        <span>BrudStudio</span>
+                                        <span>BrudStudio</span>
+                                        <span>BrudStudio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="project-item">
+                                <a href="#" class="project-item-link">&gt; Lucida</a>
+                                <img src="assets/pro-image3.webp" class="project-item-image">
+                                <div class="marquee">
+                                    <div class="marquee-inner">
+                                        <span>Lucida</span>
+                                        <span>Lucida</span>
+                                        <span>Lucida</span>
+                                        <span>Lucida</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="project-item">
+                                <a href="#" class="project-item-link">&gt; Phunnk Radio</a>
+                                <img src="assets/pro-image4.webp" class="project-item-image">
+                                <div class="marquee">
+                                    <div class="marquee-inner">
+                                        <span>Phunnk Radio</span>
+                                        <span>Phunnk Radio</span>
+                                        <span>Phunnk Radio</span>
+                                        <span>Phunnk Radio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about" data-scroll-section>
+                    <div class="about-container">
+                        <p>
+                            Hi! My name is <span>Yosune Merz</span> and I'm a digital
+                            designer, born in <span>Loweswater,</span> England.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Ratione soluta tenetur quo reiciendis. Assumenda, magnam.
+                            <span class="about_container-contact-link"><a href="#" target="_blank">get in
+                                    touch.</a></span>
+                        </p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector("#para-scroll"),
+            smooth: true
+        })
+    </script>
+</body>
+</html>
